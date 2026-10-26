@@ -1,9 +1,12 @@
-name: Build Signed Release APK
+name: Build & Publish Signed Release APK
 
 on:
   push:
     branches: [ "main", "master" ]
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build-apk:
@@ -18,6 +21,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Accept Android SDK Licenses
+        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -29,8 +35,20 @@ jobs:
       - name: Assemble Signed Release APK
         run: gradle assembleRelease
 
+      - name: Prepare Release APK
+        run: cp app/build/outputs/apk/release/app-release.apk GearMetrology-v1.0.0-release.apk
+
       - name: Upload Signed Release APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: GearMetrology-Signed-Release-APK
-          path: app/build/outputs/apk/release/app-release.apk
+          path: GearMetrology-v1.0.0-release.apk
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: "Gear Metrology Calculator v1.0.0 (کارگاه ساخت فولاد مبارکه)"
+          body: "Signed offline Android release APK (DIN 3960 / ISO 21771 Span W & Over Pins/Balls M)."
+          files: GearMetrology-v1.0.0-release.apk
+          overwrite: true
