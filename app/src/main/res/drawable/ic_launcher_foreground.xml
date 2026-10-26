@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!--
+        Safe zone for Adaptive Icon is centered at (54, 54) with radius 33dp (diameter 66dp).
+        This foreground features:
+        1. High-contrast 8-tooth involute gear silhouette in crisp white/silver (#F8FAFC)
+        2. Two gold/amber measuring pins/balls (#FFB703) seated in opposite tooth spaces (Measurement over pins M)
+        3. Caliper span jaws (#38BDF8 cyan-blue) spanning across the top teeth (Span measurement W_k)
+    -->
+
+    <!-- Outer Gear Teeth (8 bold involute-style teeth around center 54,54) -->
+    <!-- Vertical & Horizontal Teeth -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M50,26 L58,26 L60,33 L48,33 Z" />
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M50,82 L58,82 L60,75 L48,75 Z" />
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M26,50 L26,58 L33,60 L33,48 Z" />
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M82,50 L82,58 L75,60 L75,48 Z" />
+
+    <!-- Diagonal Teeth (45 deg) -->
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M31.4,37.0 L37.0,31.4 L43.4,36.4 L36.4,43.4 Z" />
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M71.0,31.4 L76.6,37.0 L71.6,43.4 L64.6,36.4 Z" />
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M31.4,71.0 L36.4,64.6 L43.4,71.6 L37.0,76.6 Z" />
+    <path
+        android:fillColor="#E2E8F0"
+        android:pathData="M76.6,71.0 L71.0,76.6 L64.6,71.6 L71.6,64.6 Z" />
+
+    <!-- Gear Root Body Ring -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:pathData="M54,54m-22,0a22,22 0,1 1,44 0a22,22 0,1 1,-44 0" />
+
+    <!-- Pitch Circle Reference Ring (Dashed/Stroked) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#475569"
+        android:strokeWidth="1.5"
+        android:pathData="M54,54m-16,0a16,16 0,1 1,32 0a16,16 0,1 1,-32 0" />
+
+    <!-- Gear Center Bore + Keyway -->
+    <path
+        android:fillColor="#0D1B2A"
+        android:pathData="M54,54m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0" />
+    <path
+        android:fillColor="#0D1B2A"
+        android:pathData="M51.5,41.5h5v5h-5z" />
+
+    <!-- Two Precision Measuring Pins/Balls (Amber Gold #FFB703 with dark rim) seated in opposite spaces -->
+    <!-- Left-Upper / Right-Lower or Horizontal opposite tooth spaces -->
+    <path
+        android:fillColor="#FFB703"
+        android:strokeColor="#0D1B2A"
+        android:strokeWidth="1.5"
+        android:pathData="M30,44m-4.8,0a4.8,4.8 0,1 1,9.6 0a4.8,4.8 0,1 1,-9.6 0" />
+    <path
+        android:fillColor="#FFB703"
+        android:strokeColor="#0D1B2A"
+        android:strokeWidth="1.5"
+        android:pathData="M78,64m-4.8,0a4.8,4.8 0,1 1,9.6 0a4.8,4.8 0,1 1,-9.6 0" />
+
+    <!-- Dimension Line Connecting the Two Measuring Pins (M measurement motif) -->
+    <path
+        android:strokeColor="#FFB703"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:pathData="M30,44 L78,64" />
+
+    <!-- Caliper Span Jaws (Wk base tangent motif) at top-left / top-right -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M30,21 L78,21 L78,25 L74,25 L74,36 L70.5,33 L70.5,25 L37.5,25 L37.5,33 L34,36 L34,25 L30,25 Z" />
+</vector>
